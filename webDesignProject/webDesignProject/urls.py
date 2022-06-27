@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from onlineDrawingApp import views as main_view
 #from webDesignProject import onlineDrawingApp
 
 urlpatterns = [
+    path('', main_view.index),
     path('admin/', admin.site.urls),
 #    path('token/'),
     path('onlineDrawingApp/', include('onlineDrawingApp.urls')),
