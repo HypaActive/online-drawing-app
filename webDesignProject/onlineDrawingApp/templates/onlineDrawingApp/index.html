@@ -1,23 +1,24 @@
-<!doctype html>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="//www.twilio.com/marketing/bundles/marketing/img/favicons/favicon.ico">
+    {% comment %} Above link is for the favourites Icon, create something nice here. {% endcomment %}
     <title>Online Drawing App</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'style.css' %}" />
 </head>
 
 <body>
-    <div class="tips">
+    <div class="topDiv">
         <p id="message">Initializing Sync...</p>
-        <p>Open this page in a few tabs to test!</p>
+        <p>Time to Test the Page!</p>
     </div>
     <div class="buttons">
-        <button id="color-btn" class="btn">Change Color</button>
-        <button id="clear-btn" class="btn">Clear</button>
+        <button id="color-btn" class="btn">Colour Changer</button>
+        <button id="clear-btn" class="btn">Clear Board</button>
     </div>
     <canvas class="whiteboard"></canvas>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

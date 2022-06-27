@@ -3,6 +3,8 @@
 }
 
 html, body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -11,6 +13,7 @@ html, body {
 .whiteboard {
     height: 100%;
     width: 100%;
+    border: 1px solid black;
     position: absolute;
     left: 0;
     right: 0;
@@ -18,16 +21,17 @@ html, body {
     top: 0;
 }
 
-.tips {
+.topDiv {
     position: fixed;
     left: 0;
     top: 0;
+    margin: 5px;
 }
 
 .buttons {
     position: fixed;
-    right: 10px;
-    top: 10px;
+    right: 20px;
+    top: 20px;
     z-index: 1;  /* make the button on top of the whiteboard */
 }
 
