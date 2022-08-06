@@ -20,7 +20,13 @@ from onlineDrawingApp import views as main_view
 
 urlpatterns = [
     path('', main_view.index),
+    path('', main_view.aboutUs),
+    path('', main_view.contact),
+    path('', main_view.draw),
+    path('', main_view.shop),
+    path('', main_view.howTo),
     path('admin/', admin.site.urls),
 #    path('token/'),
     path('onlineDrawingApp/', include('onlineDrawingApp.urls')),
+    # path('', include('base.urls')),
 ]

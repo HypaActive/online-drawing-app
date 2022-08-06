@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="//www.twilio.com/marketing/bundles/marketing/img/favicons/favicon.ico">
+    {% comment %} Above link is for the favourites Icon, create something nice here. {% endcomment %}
+    <title>Online Drawing App</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/style.css' %}" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="botDiv">
+            <p id="message">Initializing Sync...</p>
+            <p>Time to Draw Dudes!</p>
+            <nav id="mainNav">
+                <div class="container">
+                    <ul>
+                        <li><a href="{% url 'index' %}">Return Home</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="buttons">
+            <div class="drawButtons">
+                <button id="draw-btn" disabled = "true" class="btn">Draw</button>
+                <button id="erase-btn" class="btn">Erase</button>
+            </div>
+            <div class="lineButtons">
+                <button id="lineWidth-btn1" disabled = "true" class="btn">S</button>
+                <button id="lineWidth-btn2" class="btn">M</button>
+                <button id="lineWidth-btn3" class="btn">L</button>
+                <button id="lineWidth-btn4" class="btn">XL</button>
+            </div>
+            <div class="otherButtons">
+                <input type="color" id="colorPicker" value="Black">
+                <button id="clear-btn" class="btn">Clear Board</button>
+            </div>
+        </div>
+        <div class="drawArea">
+            <canvas class="whiteboard" width="1000" height="700"></canvas>
+        </div>
+        <div class="chat">
+            Chatbox
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://media.twiliocdn.com/sdk/js/sync/v3.0/twilio-sync.min.js"></script>
+    <script src="{% static 'main.js' %}"></script>
+</body>
+
+</html>

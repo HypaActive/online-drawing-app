@@ -1,3 +1,5 @@
+/* CSS Styles for all pages */
+
 * {
     box-sizing: border-box;
 }
@@ -6,33 +8,207 @@ html, body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     height: 100%;
+    width: 100%;
     margin: 0;
     padding: 0;
+    background-color: #333;
+    color: #ccc;
 }
 
-.whiteboard {
-    height: 100%;
-    width: 100%;
-    border: 1px solid black;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
+/* Grid init */
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 10px repeat(20, 1fr) 10px;
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    align-items: start;
 }
 
+/* Genral divs, headers, footers and nav bar for website. */
 .topDiv {
     position: fixed;
     left: 0;
     top: 0;
     margin: 5px;
+    z-index: 1;
+    background-color: #333;
+    width: 100%;
 }
 
-.buttons {
+.midDiv {
+    position: relative;
+    left: 10%;
+    top: 0;
+    margin: 5px;
+    grid-column: 2 / 20;
+    grid-row: 2;
+    z-index: 1;
+    top: 5%;
+    width: fit-content;
+    height: fit-content;
+    background-color: #333;
+}
+
+
+.botDiv {
+    position: relative;
+    left: 0;
+    top: 0;
+    margin: 5px;
+    grid-column: 1 / 11;
+    grid-row: 5;
+    z-index: 1;
+    background-color: #333;
+}
+
+#mainNav {
+    background: #ccc;
+    color: black;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+
+#mainNav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+}
+
+#mainNav li {
+    display: inline;
+    padding: 5px 10px;
+    width: 100%;
+}
+
+#mainNav a {
+    color:  black;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+#mainNav li:hover {
+    background-color: #aaa;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+#mainFooter {
+    background-color: #aaa;
+    color: black;
+    text-align: center;
+    margin-top: 50px;
     position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* make auto adjust! */
+
+#mainFooter p {
+    border: none;
+    font-size: 12px;
+}
+
+/* Cannot change the position or Size of the drawing fields, else drawing field will bug out. */
+/* Do not touch! */
+
+.drawArea {
+    grid-column: 1 / 18;
+    grid-row: 1 / 5;
+    z-index: 2;
+    overflow: auto;
+}
+
+.whiteboard {
+    border: 1px solid black;
+    cursor: crosshair;
+    position: relative;
+    z-index: 2;
+    background-color: rgb(255, 255, 255);
+}
+
+/* Buttons for drawing field. */
+
+.buttons {
+    width: fit-content;
+    margin-left: 20px; 
+    margin-top: 10px; 
+    overflow: auto;
     right: 20px;
     top: 20px;
-    z-index: 1;  /* make the button on top of the whiteboard */
+    z-index: 3;
+    grid-column: 1 / 16;
+    grid-row: 1;
+    display: flex; 
+    justify-content: flex-start; 
+    align-items: flex-start;
+    border-radius: 4px;
+}
+
+.drawButtons{
+    border: 2px solid #000000;
+    background-color: #000000;
+    width: fit-content;
+    size: auto;
+    text-align: center; 
+    margin: auto; 
+    overflow: auto;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.lineButtons{
+    border: 2px solid #000000;
+    background-color: #000000;
+    width: fit-content;
+    size: auto;
+    text-align: center; 
+    margin: auto; 
+    overflow: auto;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.otherButtons{
+    border: 2px solid #000000;
+    background-color: #000000;
+    width: fit-content;
+    size: auto;
+    text-align: center; 
+    margin: auto; 
+    overflow: auto;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+/* Color picker button. */
+/* Cannot make this button align with the rest :( padding/margin not working! color and button position are browser determined and cannot be changed in css. */
+
+#colorPicker {
+    width: 60px;
+    height: 40px;
+    cursor: pointer;
+    background-color: rgb(207, 84, 84);
+    color: black;
+    border: 5px solid #555555;
+    grid-column: 1;
+    grid-row: 2;
+    text-align: center;
+    border-radius: 4px;
+    top: 0px;
+    margin: auto;
+}
+
+#colorPicker:hover {
+    background-color: #b80909;
 }
 
 .btn {
@@ -40,7 +216,30 @@ html, body {
     padding: 5px 10px;
     text-decoration: none;
     cursor: pointer;
-    background-color: white;
+    background-color: rgb(207, 84, 84);
     color: black;
     border: 5px solid #555555;
+    grid-column: 1;
+    grid-row: 2;
+    border-radius: 4px;
+    margin: auto;
+    top: 0px;
 }
+
+/* Disables status of buttons makes them fade and unclickable */
+
+:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn:hover {
+    background-color: #b80909;
+}
+
+.chat {
+    margin-top: 10px; 
+    grid-column: 18;
+    grid-row: 1;
+}
+
