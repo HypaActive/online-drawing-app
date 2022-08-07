@@ -21,7 +21,7 @@ $(function () {
     var drawing = false;
 
     // Function to get and create tokens for Multiplayer
-    $.getJSON('/token', function(tokenResponse) {
+    $.getJSON('/onlineDrawingApp/token', function(tokenResponse) {
         syncClient = new Twilio.Sync.Client(tokenResponse.token, { logLevel: 'debug' });
         syncClient.on('connectionStateChanged', function(state) {
             if (state != 'connected') {
