@@ -30,10 +30,11 @@ html, body {
     position: fixed;
     left: 0;
     top: 0;
-    margin: 5px;
+    margin-left: 5px;
     z-index: 1;
     background-color: #333;
     width: 100%;
+    z-index: 10;
 }
 
 .midDiv {
@@ -50,13 +51,42 @@ html, body {
     background-color: #333;
 }
 
+.midDiv ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+    font-size: 28px;
+}
+
+.midDiv li {
+    display: inline;
+    padding: 5px 10px;
+    width: 100%;
+    font-size: 28px;
+    border: 5px solid #f3dfdf;
+    border-radius: 4px;
+    cursor: crosshair;
+}
+
+.midDiv a {
+    color:  rgb(190, 92, 92);
+    text-decoration: none;
+    font-size: 28px;
+    cursor: crosshair;
+}
+
+.midDiv li:hover {
+    background-color: #aaa;
+    cursor: crosshair;
+}
 
 .botDiv {
     position: relative;
     left: 0;
     top: 0;
     margin: 5px;
-    grid-column: 1 / 11;
+    grid-column: 1 / 6;
     grid-row: 5;
     z-index: 1;
     background-color: #333;
@@ -108,6 +138,7 @@ html, body {
     position: fixed;
     bottom: 0;
     width: 100%;
+    z-index: 10;
 }
 
 /* make auto adjust! */
