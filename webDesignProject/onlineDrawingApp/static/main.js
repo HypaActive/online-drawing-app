@@ -13,11 +13,12 @@ $(function () {
     var drawBtn = $('#draw-btn');
     var canvas = $('.whiteboard')[0];
     var context = canvas.getContext('2d');
-    var lineWidth = 2;
-    var lineWidhtSaver = lineWidth;
+    //var lineWidth = 2;
     var current = {
         color: $("#colorPicker").val(),
+        lineWidth: 2,
     };
+    var lineWidhtSaver = current.lineWidth;
     var drawing = false;
 
     // Function to get and create tokens for Multiplayer
@@ -46,7 +47,14 @@ $(function () {
     // DO NOT CHANGE!
 
     // Base Function and twilio sync features.
-    function drawLine(x0, y0, x1, y1, color, syncStream) {
+
+    function syncDrawingData(data) {
+        var w = canvas.width;
+        var h = canvas.height;
+        drawLine(data.x0 * w, data.y0 * h, data.x1 * w, data.y1 * h, data.color, data.lineWidth);
+    }
+
+    function drawLine(x0, y0, x1, y1, color, lineWidth, syncStream) {
         context.beginPath();
         context.moveTo(x0, y0);
         context.lineTo(x1, y1);
@@ -65,7 +73,8 @@ $(function () {
             y0: y0 / h,
             x1: x1 / w,
             y1: y1 / h,
-            color: color
+            color: color,
+            lineWidth: lineWidth
         });
     }
 
@@ -88,12 +97,12 @@ $(function () {
     function onMouseUp(e) {
         if (!drawing) { return; }
         drawing = false;
-        drawLine(current.x, current.y, e.clientX || e.touches[0].clientX, e.clientY || e.touches[0].clientY, current.color, syncStream);
+        drawLine(current.x, current.y, e.clientX || e.touches[0].clientX, e.clientY || e.touches[0].clientY, current.color, current.lineWidth, syncStream);
     }
 
     function onMouseMove(e) {
         if (!drawing) { return; }
-        drawLine(current.x, current.y, e.clientX || e.touches[0].clientX, e.clientY || e.touches[0].clientY, current.color, syncStream);
+        drawLine(current.x, current.y, e.clientX || e.touches[0].clientX, e.clientY || e.touches[0].clientY, current.color, current.lineWidth, syncStream);
         current.x = e.clientX || e.touches[0].clientX;
         current.y = e.clientY || e.touches[0].clientY;
     }
@@ -118,7 +127,7 @@ $(function () {
 
     // 4 Functions to change Line Width to 4 different presets. Includes feature to disable the selected widht button for QOL and readability.
     function changeLineWidth1(){
-        lineWidth = 2;
+        current.lineWidth = 2;
         var btn = $('#lineWidth-btn1');
         btn.prop("disabled", true); 
         var btn = $('#lineWidth-btn2');
@@ -130,7 +139,7 @@ $(function () {
     }
 
     function changeLineWidth2(){
-        lineWidth = 5;
+        current.lineWidth = 5;
         var btn = $('#lineWidth-btn1');
         btn.prop("disabled", false); 
         var btn = $('#lineWidth-btn2');
@@ -142,7 +151,7 @@ $(function () {
     }
 
     function changeLineWidth3(){
-        lineWidth = 10;
+        current.lineWidth = 10;
         var btn = $('#lineWidth-btn1');
         btn.prop("disabled", false); 
         var btn = $('#lineWidth-btn2');
@@ -154,7 +163,7 @@ $(function () {
     }
 
     function changeLineWidth4(){
-        lineWidth = 20;
+        current.lineWidth = 20;
         var btn = $('#lineWidth-btn1');
         btn.prop("disabled", false); 
         var btn = $('#lineWidth-btn2');
@@ -169,7 +178,7 @@ $(function () {
     // Also disables colorpicker so that the User cant change the erase color.
     function eraseDrawing(){
             colorSaver = current.color;
-            lineWidhtSaver = lineWidth;
+            lineWidhtSaver = current.lineWidth;
             current.color = 'white';
             changeLineWidth4();
         var btn = $('#erase-btn');
@@ -224,13 +233,13 @@ $(function () {
     eraseBtn.on('click', eraseDrawing);
 
     // Event listener for resizing, followed by function for resize
-    window.addEventListener('resize', onResize);
-    onResize();
+    // window.addEventListener('resize', onResize);
+    // onResize();
 
-    function onResize() {
-        canvas.width = drawArea.innerWidth;
-        canvas.height = drawArea.innerHeight;
-    };
+    // function onResize() {
+    //     canvas.width = drawArea.innerWidth;
+    //     canvas.height = drawArea.innerHeight;
+    // };
     // Check if we can change reuse this to work without putting it full screen!
 
     // End
