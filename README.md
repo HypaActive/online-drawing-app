@@ -1,7 +1,8 @@
 # online-drawing-app
 
 Die Bois presents Lets Draw Dude!
-A online multiplayer drawing website hosted under https://letsdrawdu.de/
+
+An online multiplayer drawing website hosted under https://letsdrawdu.de/
 
 IMAGE HERE
 
