@@ -1,4 +1,4 @@
-# online-drawing-app
+# online drawing app!!!
 
 Die Bois presents Lets Draw Dude!
 
@@ -10,14 +10,14 @@ IMAGE HERE
 This project was created during the university course "Web Technology" at the "FOM Düsseldorf".
 
 
-# Installation
+## Installation
 
 --> How to run --> für Sven :) 
 --> Docker on a Linux Server
 --> .env file
 
 
-# Used Tools
+## Used Tools
 
 - Django
 - Twilio
@@ -27,14 +27,16 @@ This project was created during the university course "Web Technology" at the "F
 And others...
 
 
-# Functions
+## Functions
 
-Drawing!
-Mutliplayer!
-HTML!
+- Drawing!
+- Mutliplayer!
+- HTML!
+- Shop!
+- And more...
 
 
-# HowTo
+## How To
 
 
 Click on the Draw button on either the index page or the Navbar.
@@ -60,7 +62,7 @@ Full Support for Mobile, Tablet and PC with great responsive design!
 Have fun drawing, dudes!
 
 
-# Team
+## Team
 
 Die Bois consists of:
 
@@ -76,4 +78,4 @@ Mahmoud Ftineh
 
 
 
-End of Readme
+### End of Readme
