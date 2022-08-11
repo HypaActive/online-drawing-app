@@ -23,7 +23,7 @@ This project was created during the university course "Web Technology" at the "F
 
 ## Installation
 
-An account on [https://www.twilio.com](twilio.com) is necessary to use this app!
+An account on [twilio.com](https://www.twilio.com) is necessary to use this app!
 - Create an account on twilio
 - use git to checkout this project
 - insert your twilio and Django keys/secrets
