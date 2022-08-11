@@ -233,14 +233,16 @@ $(function () {
     eraseBtn.on('click', eraseDrawing);
 
     // Event listener for resizing, followed by function for resize
-    // window.addEventListener('resize', onResize);
-    // onResize();
+    window.addEventListener('resize', onResize);
+    onResize();
 
-    // function onResize() {
-    //     canvas.width = drawArea.innerWidth;
-    //     canvas.height = drawArea.innerHeight;
-    // };
-    // Check if we can change reuse this to work without putting it full screen!
+    function onResize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    };
+    // Intentionally chosen to display canvas on whole page with resize function, to allow for responsive design while not breaking any drawing functionalities.
+    // It loses all drawings on resize, but this option is better than a static canvas.
+    // On static resize cursor will no longer draw where it is placed.
 
     // End
 });
