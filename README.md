@@ -4,7 +4,7 @@ Die Bois presents Lets Draw Dude!
 
 An online multiplayer drawing website hosted under https://letsdrawdu.de/
 
-IMAGE HERE
+![Example](https://user-images.githubusercontent.com/103064414/184151367-0c9c668e-683b-4ea9-bea2-409599bb098a.PNG)
 
 
 This project was created during the university course "Web Technology" at the "FOM Düsseldorf".
