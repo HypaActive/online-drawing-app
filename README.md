@@ -35,7 +35,7 @@ This project was created during the university course "Web Technology" at the "F
 - Docker
 - Paint
 - Visual Studio Code
-And others...
+- And others...
 
 
 ## How To
