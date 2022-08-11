@@ -13,7 +13,7 @@ This project was created during the university course "Web Technology" at the "F
 ## Features
 
 - Drawing!
-- Mutliplayer!
+- Multiplayer!
 - Shop!
 - Great Code!
 
