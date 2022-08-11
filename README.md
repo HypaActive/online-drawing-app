@@ -10,6 +10,17 @@ An online multiplayer drawing website hosted under https://letsdrawdu.de/
 This project was created during the university course "Web Technology" at the "FOM Düsseldorf".
 
 
+## Features
+
+- Drawing!
+- Mutliplayer!
+- Shop!
+- Great Code!
+
+![CodeEx](https://user-images.githubusercontent.com/103064414/184151779-328043e6-ccd1-44f7-aa55-463e80053664.PNG)
+
+- And more...
+
 ## Installation
 
 --> How to run --> für Sven :) 
@@ -25,15 +36,6 @@ This project was created during the university course "Web Technology" at the "F
 - Paint
 - Visual Studio Code
 And others...
-
-
-## Functions
-
-- Drawing!
-- Mutliplayer!
-- HTML!
-- Shop!
-- And more...
 
 
 ## How To
