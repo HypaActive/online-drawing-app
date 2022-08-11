@@ -23,10 +23,55 @@ This project was created during the university course "Web Technology" at the "F
 
 ## Installation
 
---> How to run --> für Sven :) 
---> Docker on a Linux Server
---> .env file
+An account on [https://www.twilio.com](twilio.com) is necessary to use this app!
+- Create an account on twilio
+- use git to checkout this project
+- insert your twilio and Django keys/secrets
+- build the image with `docker-compose build`
+- run the image with `docker-compose up` (-d to detach if everything works like expected)
 
+## Example docker-compose.yml
+```yaml
+version: "3.7"
+services:
+  onlinedrawingapp:
+    build: .
+    container_name: onlinedrawingapp
+    networks:
+      - extern
+    environment:
+      - DJANGO_SECRET_KEY=heregoesthesecretkey!!!
+      - DJANGO_DEBUG_MODE=False
+      - DJANGO_ALLOWED_HOSTS=letsdrawdu.de
+      - DJANGO_LANGUAGE_CODE=de-de
+      - DJANGO_TIME_ZONE=Europe/Berlin
+      - TWILIO_ACCOUNT_SID=twiliosecrets
+      - TWILIO_AUTH_TOKEN=twiliosecrets
+      - TWILIO_SYNC_SERVICE_SID=twiliosecrets
+      - TWILIO_API_KEY=twiliosecrets
+      - TWILIO_API_SECRET=twiliosecrets
+      - LETSENCRYPT_HOST=letsdrawdu.de
+      - LETSENCRYPT_EMAIL=webmaster@letsdrawdu.de
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.ldd.entrypoints=http"
+      - "traefik.http.routers.ldd.rule=Host(`letsdrawdu.de`)"
+      - "traefik.http.middlewares.ldd-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.ldd.middlewares=ldd-https-redirect"
+      - "traefik.http.routers.ldd-secure.entrypoints=https"
+      - "traefik.http.routers.ldd-secure.rule=Host(`letsdrawdu.de`)"
+      - "traefik.http.routers.ldd-secure.tls=true"
+      - "traefik.http.routers.ldd-secure.tls.certresolver=http"
+      - "traefik.http.routers.ldd-secure.service=ldd"
+      - "traefik.http.services.ldd.loadbalancer.server.port=8000"
+      - "traefik.docker.network=extern"
+    expose:
+      - "8000"
+
+networks:
+  extern:
+    external: true
+```
 
 ## Used Tools
 
