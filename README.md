@@ -16,6 +16,7 @@ This project was created during the university course "Web Technology" at "FOM D
 - Multiplayer!
 - Shop!
 - Great Code!
+- Chat!
 
 ![CodeEx](https://user-images.githubusercontent.com/103064414/184151779-328043e6-ccd1-44f7-aa55-463e80053664.PNG)
 
@@ -113,6 +114,8 @@ The S, M, L, XL buttons are to select your line width.
 The color button opens a color picker where you can select the color you draw with.
 
 The clear board button clears the board entirely. Please note that this feature intentionally only works locally and does not clear the screens of other participants, only your own!
+
+Use the Chatbox on the right to Chat with your dudes!
 
 Due to technical limitations, screen is also cleared on resize, please keep that in mind!
 
