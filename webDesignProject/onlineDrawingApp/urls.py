@@ -9,7 +9,8 @@ urlpatterns = [
     path('draw.html',views.draw, name='draw'),
     path('shop.html',views.shop, name='shop'),
     path('howTo.html',views.howTo, name='howTo'),
-    path('token', views.token, name='token')
+    path('token', views.token, name='token'),
+    path('chat.html', views.chat, name='chat')
 ]
 
 urlpatterns += staticfiles_urlpatterns()

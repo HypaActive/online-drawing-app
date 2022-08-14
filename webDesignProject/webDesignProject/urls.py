@@ -24,8 +24,8 @@ urlpatterns = [
     path('', main_view.draw),
     path('', main_view.shop),
     path('', main_view.howTo),
+    path('', main_view.chat),
     path('admin/', admin.site.urls),
-    path('chat/', include('chat.urls')),
     path('onlineDrawingApp/', include('onlineDrawingApp.urls')),
     # path('', include('base.urls')),
 ]

@@ -45,11 +45,11 @@
             <canvas class="whiteboard"></canvas>
         </div>
         <div class="chat">
-            Chatbox
+            {% include 'onlineDrawingApp/chat.html' %}
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://media.twiliocdn.com/sdk/js/sync/releases/0.12.4/twilio-sync.min.js"></script>
+    <!-- <script src="https://media.twiliocdn.com/sdk/js/sync/releases/0.12.4/twilio-sync.min.js"></script> -->
     <script src="{% static 'main.js' %}"></script>
 </body>
 

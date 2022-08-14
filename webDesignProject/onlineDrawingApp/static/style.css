@@ -271,8 +271,9 @@ html, body {
 
 .chat {
     margin-top: 10px; 
-    grid-column: 18;
-    grid-row: 1;
+    grid-column: 17/22;
+    grid-row: 1/20;
     z-index: 10;
+    background-color: #333;
 }
 

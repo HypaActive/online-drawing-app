@@ -47,3 +47,8 @@ def token(request):
     token.add_grant(sync_grant)
     # return token as JSON object
     return JsonResponse({'identity': username, 'token': token.to_jwt()})
+
+def chat(request):
+    return render(request, 'onlineDrawingApp/chat.html', {
+        'room_name': "default"
+    })
