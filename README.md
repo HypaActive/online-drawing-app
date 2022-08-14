@@ -7,7 +7,7 @@ An online multiplayer drawing website hosted under https://letsdrawdu.de/
 ![Example](https://user-images.githubusercontent.com/103064414/184151367-0c9c668e-683b-4ea9-bea2-409599bb098a.PNG)
 
 
-This project was created during the university course "Web Technology" at the "FOM Düsseldorf".
+This project was created during the university course "Web Technology" at "FOM Düsseldorf".
 
 
 ## Features
@@ -39,12 +39,14 @@ services:
     container_name: onlinedrawingapp
     networks:
       - extern
+      - onlinedrawingapp
     environment:
       - DJANGO_SECRET_KEY=heregoesthesecretkey!!!
       - DJANGO_DEBUG_MODE=False
       - DJANGO_ALLOWED_HOSTS=letsdrawdu.de
       - DJANGO_LANGUAGE_CODE=de-de
       - DJANGO_TIME_ZONE=Europe/Berlin
+      - REDIS_HOST=redis-container
       - TWILIO_ACCOUNT_SID=twiliosecrets
       - TWILIO_AUTH_TOKEN=twiliosecrets
       - TWILIO_SYNC_SERVICE_SID=twiliosecrets
@@ -68,9 +70,19 @@ services:
     expose:
       - "8000"
 
+  redis:
+    container_name: redis_db
+    image: redis:latest
+    hostname: redis-container
+    networks:
+      - onlinedrawingapp
+    expose:
+      - "6379"
+
 networks:
   extern:
     external: true
+  onlinedrawingapp: 
 ```
 
 ## Used Tools
